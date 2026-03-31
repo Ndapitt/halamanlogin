@@ -60,24 +60,27 @@ button {
     <div class="box" id="loginBox">
         <h2>LOGIN YUK👇</h2>
         <form id="">
-            <input type="text" id="username" placeholder="masukkan nama" required>
-            <input type="password" id="password" placeholder="kata sandi" required>
-            <button onclick="login()">Login</button>
+        <input type="text" id="username" placeholder="masukkan nama" required>
+        <input type="password" id="password" placeholder="kata sandi" required>
+        <button onclick="login(event)">Login</button>
+
         </form>
         <p class="error" id="errorMsg">Password/Username salah!</p>
     </div>
     <script>
-        function login() {
+        function login(event) {
+            event.preventDefault(); // Mencegah form dikirim dan halaman direfresh
             let user = document.getElementById("username").value;
             let pass = document.getElementById("password").value;
             console.log(user);
 
-             if (user === "ndapluviophile" && pass === "phitt") {
+            if (user === "ndaa" && pass === "dian") {
                 localStorage.setItem("isLoggedIn", "true");
-                 window.location.href = "dhsbord.html";
+                window.location.href = "dhsbord.html"; // Arahkan ke halaman dashboard
             } else {
-                // password salah
+               // Password salah
                 document.getElementById("errorMsg").style.display = "block";
+
             }
         }
     </script>
