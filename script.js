@@ -16,3 +16,6 @@ function login(event) {
         errorMsg.style.display = "block"; 
     }
 }
+function kembalilogin() {
+    window.location.href = "index.html"
+}
